@@ -25,7 +25,6 @@ public static class Extensions
                 permissionService.CreatePublicEndpoint(f).Wait(); // yeah... Wait() ain't pretty, but no other option here. Async delegates can't return values
                 return StatusResult<DataFlow>.Success(f);
             },
-            OnRecover = _ => StatusResult.Success(),
             OnTerminate = _ => StatusResult.Success(),
             OnSuspend = _ => StatusResult.Success(),
             OnPrepare = f =>
